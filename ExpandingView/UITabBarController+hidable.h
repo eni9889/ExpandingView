@@ -28,5 +28,6 @@
 @interface UITabBarController (hidable)
 
 - (void)setTabBarHidden:(BOOL)hidden animated:(BOOL)animated;
+-(UIView *)getContentView;
 
 @end

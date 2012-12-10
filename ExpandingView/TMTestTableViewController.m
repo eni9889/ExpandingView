@@ -29,8 +29,6 @@
 #import "TMTestTableViewController.h"
 #import "UITabBarController+hidable.h"
 
-#import "TMPostDetailViewController.h"
-
 @interface TMTestTableViewController ()
 
 @end
@@ -48,7 +46,6 @@
     if (self) {
         // Custom initialization
         self.title = NSLocalizedString(@"SOCIAL APP!", @"");
-        hidden = NO;
     }
     return self;
 }
@@ -133,10 +130,6 @@
 {
     [tableView  deselectRowAtIndexPath:indexPath animated:YES];
     
-    TMPostDetailViewController * pdvc = [[TMPostDetailViewController alloc] init];
-    
-    [self.navigationController pushViewController:pdvc 
-                                         animated:YES];
 }
 
 #pragma mark - The Magic!
@@ -175,7 +168,7 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     startContentOffset = lastContentOffset = scrollView.contentOffset.y;
-    //NSLog(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
+    //CCLOG(@"scrollViewWillBeginDragging: %f", scrollView.contentOffset.y);
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView 
